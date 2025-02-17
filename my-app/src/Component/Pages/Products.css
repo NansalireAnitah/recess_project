@@ -19,48 +19,56 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  background-color: #fff;
 }
 
-.product-card img {
+.product-image-container {
+  position: relative;
   width: 100%;
-  height: auto;
-  border-bottom: 1px solid rgb(214, 154, 91);
-  border-radius: 0.5rem 0.5rem 0 0; /* Rounded corners only at the top */
+  height: 300px; /* You can adjust this based on your image size */
 }
 
-.product-details {
-  padding: 10px;
-  border: 1px solid rgb(214, 154, 91);
-  border-top: none; /* Remove top border to align with image */
-  border-radius: 0 0 0.5rem 0.5rem; /* Rounded corners only at the bottom */
-  background-color: rgb(138, 85, 35);
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+  border-radius: 0.5rem 0.5rem 0 0;
 }
 
-.product-details .product-info {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+.product-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-.product-details .product-info > div {
-  margin: 3px 0;
+.product-price {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
 }
 
-.product-card label {
-  font-weight: 600;
-  margin-right: 0.2rem;
+.product-stock {
+  font-size: 1rem;
+  margin-bottom: 15px;
 }
 
 .add-to-cart {
-  align-self: flex-end;
-  margin-top: 10px;
-}
-
-.add-to-cart button {
   background-color: #f3d8b9f7;
   border: none;
   color: rgb(249, 247, 244);
@@ -81,78 +89,21 @@
   margin-right: 5px;
 }
 
-.add-product-link {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.padded-box {
-  padding: 0;
-  margin-top: 1rem;
-}
-
-.product-image-container {
-  padding: 0; /* Reset padding to 0 */
-}
-
-.welcome-note {
-  background-color: #f0f0f0;
-  padding: 10px 0;
-  text-align: center;
-  overflow: hidden;
-}
-
-.sliding-text {
-  animation: slide 10s linear infinite; /* Adjust animation duration and timing function as needed */
-}
-
-@keyframes slide {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-/* Add this to your existing CSS file or create a new one */
-
-.sliding-note {
-  position: fixed;
-  top: 0;
-  right: -100%; /* Start off-screen */
-  width: 100%;
-  background-color: #4CAF50; /* Customize background color */
+.product-details {
+  padding: 10px;
+  border: 1px solid rgb(214, 154, 91);
+  border-top: none;
+  border-radius: 0 0 0.5rem 0.5rem;
+  background-color: rgb(138, 85, 35);
   color: white;
-  padding: 15px;
-  text-align: center;
-  font-size: 1.2rem;
-  transition: right 0.5s ease-out;
-  z-index: 1000; /* Ensure it's on top of other content */
 }
 
-.sliding-note.active {
-  right: 0; /* Slide into view */
-}
-/* Add this to your home.css or main CSS file */
-.marquee-container {
-  position: relative;
-  overflow: hidden;
-  /* Customize background color */
-  color: rgb(5, 4, 4);
-  padding: 15px;
-  font-size: 1.2rem;
-  height: 50px; /* Adjust height as needed */
+.product-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.marquee-content {
-  display: inline-block;
-  white-space: nowrap;
-  animation: marquee 20s linear infinite;
+.product-info > div {
+  margin: 3px 0;
 }
-
-@keyframes marquee {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-

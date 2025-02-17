@@ -5,43 +5,48 @@ const Home = () => {
   const [products, setProducts] = useState([
     {
       id: 1, 
-      name: 'Product 1', 
-      price: 100, 
-      stock: 10, 
+      name: 'Stads', 
+      price: 10000, 
+      stock: 1, 
       image: '/images/pic1.jpg' 
     },
     { 
       id: 2, 
-      name: 'Product 2', 
-      price: 150, 
+      name: 'Silver pieces', 
+      price: 15000, 
       stock: 5, 
       image: '/images/pic2.jpg' 
     },
     { 
       id: 3, 
-      name: 'Product 3', 
-      price: 200, 
+      name: 'Gold stads', 
+      price: 10000, 
       stock: 8, 
       image: '/images/pic3.jpg' 
     },
-
+    { 
+      id: 4, 
+      name: 'Gold stads', 
+      price: 10000, 
+      stock: 8, 
+      image: '/images/pic3.jpg' 
+    },
+    { 
+      id: 5, 
+      name: 'Danglers', 
+      price: 10000, 
+      stock: 1, 
+      image: '/images/pic4.jpg' 
+    },
+    { 
+      id: 6, 
+      name: 'Bronches', 
+      price: 25000, 
+      stock: 1, 
+      image: '/images/pic5.jpg' 
+    },
   ]); // Initialize as an empty array
   const { addToCart } = useCart(); // Destructure addToCart from useCart
-
-  // useEffect(() => {
-  //   const fetchProducts = async () => {
-  //     try {
-  //       const response = await fetch('http://127.0.0.1:5000/api/v1/products');
-  //       const data = await response.json();
-  //       setProducts(data.products || []); // Ensure products is always an array
-  //     } catch (error) {
-  //       console.error('Error fetching products:', error);
-  //       setProducts([]); // Ensure products is an empty array in case of error
-  //     }
-  //   };
-
-  //   fetchProducts();
-  // }, []);
 
   const handleAddToCart = (product) => {
     addToCart(product); // Add product to cart
@@ -50,57 +55,57 @@ const Home = () => {
 
   return (
     <div className="home">
-      
-
       <div style={{ 
         display: 'flex', 
-        gridTemplateColumns: 'repeat(4, 1fr)', 
-        flexWrap: 'wrap',
-        gap: '1rem',
-        padding: '1px', }}>
+        flexWrap: 'wrap', 
+        gap: '1rem', 
+        padding: '1px', 
+      }}>
         {products.length > 0 ? (
           products.map((product) => (
             <div
               key={product.id}
               style={{
-                border: '1px solid rgb(214, 154, 91)',
+                border: '1px solid rgb(214, 154, 91)', // Keeping border for the entire block (image + description)
                 width: '30%',
-                // marginRight: '0.5rem',
-                // marginBottom: '0.5rem',
-                // borderRadius: '0.5rem',
-                // marginTop: '0.5rem',
                 textAlign: 'center',
                 display: 'flex',
                 flexDirection: 'column',
                 padding: '1rem',
                 alignItems: 'center',
+                borderRadius: '0.5rem',
+                backgroundColor: 'rgb(221, 202, 184)', // Set a background color for the whole block
               }}
             >
+              {/* Uniform Size for Image */}
               <img
                 src={product.image}
                 alt={product.name}
-                style={{ width: 'calc(100% - 20px)', height: 'auto', borderRadius: '0.5rem', marginBottom: '1rem' }}
+                style={{
+                  width: '100%',
+                  height: '300px', // Set a fixed height for uniform size
+                  objectFit: 'cover', // Ensures the image fits the box without stretching
+                  borderRadius: '0.5rem', // Rounded corners for the image
+                  marginBottom: '0.5rem', // Reduced space between image and description
+                }}
               />
               <div
                 style={{
-                  padding: '1rem',
-                  border: '1px solid #ccc',
-                  borderTop: 'none',
-                  borderRadius: '0 0 0.5rem 0.5rem',
-                  backgroundColor: 'rgb(205, 152, 102)',
+                  width: '100%', // Ensure the description container takes full width
+                  padding: '0.5rem', // Reduced padding inside the description
                   color: 'white',
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'space-between',
+                  justifyContent: 'flex-start', // Keeps the content packed at the top
                 }}
               >
-                <h2>{product.name}</h2>
-                <p>Price: {Math.round(product.price)}</p>
-                <p>Stock: {product.stock}</p>
+                <h2 style={{ marginBottom: '0.25rem' }}>{product.name}</h2> {/* Reduced space between name and price */}
+                <p style={{ marginBottom: '0.25rem' }}>Price: {Math.round(product.price)}</p> {/* Reduced space between price and button */}
+                <p style={{ marginBottom: '0.25rem' }}>Stock: {product.stock}</p> {/* Reduced space */}
                 <button
                   style={{
                     width: '100%',
-                    padding: '0.75rem',
+                    padding: '0.5rem', // Reduced padding
                     backgroundColor: '#ca8d5b',
                     color: 'white',
                     border: 'none',

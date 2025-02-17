@@ -14,11 +14,11 @@
 /* Rest of your CSS styles */
 .App {
   text-align: center;
-  background-color:#D9C196;
+  background-color:#faf3e6;
 }
 
 .App-logo {
-  height: 30vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
@@ -27,17 +27,20 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
 .App-header {
-  background-color: rgb(246, 235, 222);
-  min-height: 20vh;
+  background-color: #fff7f7;
+  color: #fff;
+  padding: 10px;
+}
+.App-header {
+  align-items: center;
+  background-color: #f6f5f8;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
   font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  min-height: 15vh;
+  padding: 0 20px;
 }
 
 .App-link {
@@ -57,12 +60,12 @@
 }
 
 .search-bar button {
-  padding: 8px 16px;
   background-color: #aa4b14fa;
-  color: white;
   border: none;
   border-radius: 5px;
+  color: #fff;
   cursor: pointer;
+  padding: 8px 16px;
 }
 
 .navbar {
@@ -171,7 +174,7 @@ nav .navbar-brand {
 
 /* src/Component/Pages/Cart.css */
 .cart {
-  max-width: 600px;
+  max-width: 400px;
   margin: 2rem auto;
   padding: 2rem;
   border: 1px solid #ccc;
@@ -223,7 +226,7 @@ nav .navbar-brand {
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #faf2f0;
   padding: 20px;
   color: white;
 }
@@ -234,15 +237,15 @@ nav .navbar-brand {
 
 .search-bar {
   display: inline-block;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .search-bar input {
-  padding: 5px;
+  padding: 3px;
 }
 
 .product-item {
-  border: 1px solid rgb(214, 154, 91);
+  border: 1px solid rgb(231, 205, 178);
   border-radius: 0.5rem;
   margin: 1rem;
   padding: 1rem;
@@ -269,15 +272,7 @@ nav .navbar-brand {
   font-size: 1.2rem;
 }
 
-button {
-  background-color: #ca8d5b;
-  color: white;
-  border: none;
-  border-radius: 0.25rem;
-  padding: 0.75rem;
-  cursor: pointer;
-  width: 100%;
-}
+
 
 button:hover {
   background-color: #d6a27e; /* Darker shade for hover effect */
